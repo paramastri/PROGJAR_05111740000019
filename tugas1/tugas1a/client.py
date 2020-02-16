@@ -14,17 +14,19 @@ isi = open('isi.txt', 'rb')
 
 try:
     # Send data
-    message = isi.read(64)
+    message = isi.read(1024)
     print(f"sending {message}")
-
     # Look for the response
-    amount_received = 0
-    amount_expected = len(message)
-    while amount_received < amount_expected:
-        data = sock.recv(16)
-        amount_received += len(data)
-        print(f"{data}")
-        sock.sendall(message.encode())
+    # amount_received = 0
+    # amount_expected = len(message)
+    while message:
+        # data = sock.recv(1024)
+        # amount_received += len(data)
+        # print(f"{data}")
+        # sock.sendall(message.encode())
+        print("Pesan dibawah ini diterima dari server!")
+        sock.send(message)
+        message = isi.read(1024)
 finally:
     print("closing")
     sock.close()
