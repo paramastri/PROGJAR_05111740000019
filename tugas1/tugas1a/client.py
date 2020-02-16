@@ -24,7 +24,7 @@ try:
         # amount_received += len(data)
         # print(f"{data}")
         # sock.sendall(message.encode())
-        print("Pesan dibawah ini diterima dari server!")
+        # print("Pesan dibawah ini diterima dari server!")
         sock.send(message)
         message = isi.read(1024)
 finally:
