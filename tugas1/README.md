@@ -35,4 +35,4 @@
 * File salinan yang akan muncul ketika program 1a dan 1b dijalankan
 
 
-![alt text](https://github.com/paramastri/PROGJAR_05111740000019/blob/master/tugas1/tulis_isi.jpg)
+![alt text](https://github.com/paramastri/PROGJAR_05111740000019/blob/master/tugas1/tulis-isi.jpg)
