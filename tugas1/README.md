@@ -36,3 +36,7 @@
 
 
 ![alt text](https://github.com/paramastri/PROGJAR_05111740000019/blob/master/tugas1/tulis-isi.jpg)
+
+# Ketika Jalan Pada 3 Port
+
+![alt text](https://github.com/paramastri/PROGJAR_05111740000019/blob/master/tugas1/tugas1_di_3_port/Capture3Port.PNG)
