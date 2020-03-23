@@ -52,3 +52,9 @@ response:
 > gagal mendownload -> error
 
 4. jika command tidak dikenali akan merespon dengan ERRCMD
+
+* Running
+
+Ketika setiap command di atas dijalankan:
+
+![alt text](https://github.com/paramastri/PROGJAR_05111740000019/blob/master/tugas4/screenshot%20running/running.jpeg)
