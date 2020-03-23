@@ -16,7 +16,9 @@ format: COMMAND ((spasi)) PARAMETER
 1. UPLOAD
 
 upload : untuk meletakkan/mengunggah file ke data
+
 request : upload
+
 parameter : nama_file yang ingin di upload
 response : 
 - berhasil mengupload -> 'File berhasil diupload.'
