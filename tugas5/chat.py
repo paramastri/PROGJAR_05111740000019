@@ -12,6 +12,7 @@ class Chat:
 		self.users['messi']={ 'nama': 'Lionel Messi', 'negara': 'Argentina', 'password': 'surabaya', 'incoming' : {}, 'outgoing': {}}
 		self.users['henderson']={ 'nama': 'Jordan Henderson', 'negara': 'Inggris', 'password': 'surabaya', 'incoming': {}, 'outgoing': {}}
 		self.users['lineker']={ 'nama': 'Gary Lineker', 'negara': 'Inggris', 'password': 'surabaya','incoming': {}, 'outgoing':{}}
+		self.users['paramastri']={ 'nama': 'Paramastri Ardiningrum', 'negara': 'Indonesia', 'password': 'tokyo&rio','incoming': {}, 'outgoing':{}}
 	def proses(self,data):
 		j=data.split(" ")
 		try:
@@ -35,22 +36,35 @@ class Chat:
 				username = self.sessions[sessionid]['username']
 				logging.warning("INBOX: {}" . format(sessionid))
 				return self.get_inbox(username)
+
+			#
+			# FITUR BARU: MELIHAT LIST USER YANG SEDANG AKTIF
+			#
+			elif (command=='active'):
+				sessionid = j[1].strip()
+				logging.warning("ACTIVE USER: {}" . format(sessionid))
+				return self.active()	
+    				
+			#
+			# FITUR BARU: LOGOUT
+			#
 			elif (command=='logout'):
 				sessionid = j[1].strip()
 				logging.warning("LOGOUT: {}" . format(sessionid))
 				return self.logout(sessionid)
 			
+    				
 			else:
-				return {'status': 'ERROR', 'message': '**Protocol Tidak Benar'}
+				return {'status': 'ERROR', 'message': 'Sorry, wrong protocol'}
 		except KeyError:
-			return { 'status': 'ERROR', 'message' : 'Informasi tidak ditemukan'}
+			return { 'status': 'ERROR', 'message' : 'Information not found [Key Error]'}
 		except IndexError:
-			return {'status': 'ERROR', 'message': '--Protocol Tidak Benar'}
+			return {'status': 'ERROR', 'message': 'Sorry, wrong protocol [Index Error]'}
 	def autentikasi_user(self,username,password):
 		if (username not in self.users):
-			return { 'status': 'ERROR', 'message': 'User Tidak Ada' }
+			return { 'status': 'ERROR', 'message': 'Sorry, user not found. Check again.' }
 		if (self.users[username]['password']!= password):
-			return { 'status': 'ERROR', 'message': 'Password Salah' }
+			return { 'status': 'ERROR', 'message': 'Sorry, wrong password. Check again.' }
 		tokenid = str(uuid.uuid4()) 
 		self.sessions[tokenid]={ 'username': username, 'userdetail':self.users[username]}
 		return { 'status': 'OK', 'tokenid': tokenid }
@@ -60,12 +74,12 @@ class Chat:
 		return self.users[username]
 	def send_message(self,sessionid,username_from,username_dest,message):
 		if (sessionid not in self.sessions):
-			return {'status': 'ERROR', 'message': 'Session Tidak Ditemukan'}
+			return {'status': 'ERROR', 'message': 'Session not found'}
 		s_fr = self.get_user(username_from)
 		s_to = self.get_user(username_dest)
 		
 		if (s_fr==False or s_to==False):
-			return {'status': 'ERROR', 'message': 'User Tidak Ditemukan'}
+			return {'status': 'ERROR', 'message': 'Sorry, user not found. Check again.'}
 
 		message = { 'msg_from': s_fr['nama'], 'msg_to': s_to['nama'], 'msg': message }
 		outqueue_sender = s_fr['outgoing']
@@ -92,9 +106,22 @@ class Chat:
 				msgs[users].append(s_fr['incoming'][users].get_nowait())
 			
 		return {'status': 'OK', 'messages': msgs}
+	#
+	# FITUR BARU: LOGOUT
+	#
 	def logout(self, sessionid):
 		del self.sessions[sessionid]
-		return {'status': 'OK', 'messages': "logout success"}
+		return {'status': 'OK', 'messages': "Logout success!"}
+	#
+	# FITUR BARU: MELIHAT LIST USER YANG SEDANG AKTIF
+	#
+	def active(self):
+		token = list(self.sessions.keys())
+		active = ""
+		for i in token:
+			active = active + self.sessions[i]['username']+ ", "
+		return {'status': 'OK', 'message': '{}' .format(active)}
+
 
 if __name__=="__main__":
 	j = Chat()
