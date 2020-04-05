@@ -94,6 +94,7 @@ class ChatClient:
         result = self.sendstring(string)
         if result['status']=='OK':
             self.tokenid=""
+            return "Logout success!"
         else:
             return "Error, {}" . format(result['message'])
     #
