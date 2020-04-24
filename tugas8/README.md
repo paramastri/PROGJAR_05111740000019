@@ -1,4 +1,4 @@
-# Tugas 7
+# Tugas 8
 ## Cara Kerja HTTP Server
 
 * Setelah menjalankan server_thread_http.py, client dapat mengakses http://127.0.0.1:10002/sending.html dan memberikan input yang diinginkan
