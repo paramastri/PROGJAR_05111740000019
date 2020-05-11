@@ -23,8 +23,8 @@
 
 | No Test | Currency Level | Time taken for test | Complete request | Failed request | Total transferred | Request per second | Time per request | Transfer rate |
 | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: |
-| 1 | 1 |  seconds | 1000 | 0 |  bytes |  [#/sec] |  ms |  Kbytes/sec |
-| 2 | 2 |  seconds | 1000 | 0 |  bytes |  [#/sec] |  ms |  Kbytes/sec |
-| 3 | 3 |  seconds | 1000 | 0 |  bytes |  [#/sec] |  ms |  Kbytes/sec |
-| 4 | 4 |  seconds | 1000 | 0 |  bytes |  [#/sec] |  ms |  Kbytes/sec |
-| 5 | 5 |  seconds | 1000 | 0 |  bytes |  [#/sec] |  ms |  Kbytes/sec |
+| 1 | 1 | 744.548 seconds | 1000 | 0 | 122000 bytes | 1.34 [#/sec] | 744.548 ms | 0.16 Kbytes/sec |
+| 2 | 2 | 445.892 seconds | 1000 | 0 | 122000 bytes | 2.24 [#/sec] | 891.783 ms | 0.27 Kbytes/sec |
+| 3 | 3 | 382.434 seconds | 1000 | 0 | 122000 bytes | 2.61 [#/sec] | 1147.301 ms | 0.31 Kbytes/sec |
+| 4 | 4 | 364.884 seconds | 1000 | 0 | 122000 bytes | 2.74 [#/sec] | 364.884 ms | 0.33 Kbytes/sec |
+| 5 | 5 | 379.678 seconds | 1000 | 0 | 122000 bytes | 2.63 [#/sec] | 1898.389 ms | 0.31 Kbytes/sec |
