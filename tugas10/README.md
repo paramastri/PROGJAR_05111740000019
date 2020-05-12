@@ -6,7 +6,7 @@
 3. Uji cobalah dengan apache benchmark untuk 1000 request dan konkurensi yang bervariasi
 * Jumlah request: 1000
 * Konkurensi (bervariasi): 1, 2, 3, 4, 5
-4. Bandingkan penggunaan load balancer jika lb.py dijalankan di port seperti tugas9 (45000 dan 46000)
+4. Bandingkan penggunaan load balancer pada tugas9 (port 45000 dan 46000)
 
 ### PORT 44444
 
@@ -18,23 +18,23 @@
 | 4 | 4 | 2.029 seconds | 1000 | 0 | 122000 bytes | 492.86 [#/sec] | 8.116 ms | 58.72 Kbytes/sec |
 | 5 | 5 | 1.485 seconds | 1000 | 0 | 122000 bytes | 673.30 [#/sec] | 7.426 ms | 80.22 Kbytes/sec |
 
-### PORT 45000
+### Server_async_http (PORT 45000)
 
 | No Test | Currency Level | Time taken for test | Complete request | Failed request | Total transferred | Request per second | Time per request | Transfer rate |
 | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: |
-| 1 | 1 | 4.514 seconds | 1000 | 0 | 122000 bytes | 221.54 [#/sec] | 4.514 ms | 26.39 Kbytes/sec |
-| 2 | 2 | 2.752 seconds | 1000 | 0 | 0 bytes | 363.41 [#/sec] | 5.503 ms | 0.00 Kbytes/sec |
-| 3 | 3 | 1.516 seconds | 1000 | 0 | 0 bytes | 659.68 [#/sec] | 4.548 ms | 0.00 Kbytes/sec |
-| 4 | 4 | 1.239 seconds | 1000 | 0 | 0 bytes | 806.95 [#/sec] | 4.957 ms | 0.00 Kbytes/sec |
-| 5 | 5 | 5.229 seconds | 1000 | 0 | 122000 bytes | 191.24 [#/sec] | 26.145 ms | 22.78 Kbytes/sec |
+| 1 | 1 | 4.367 seconds | 1000 | 0 | 122000 bytes | 228.98 [#/sec] | 4.367 ms | 27.28 Kbytes/sec |
+| 2 | 2 | 1.837 seconds | 1000 | 0 | 122000 bytes | 544.23 [#/sec] | 3.675 ms | 64.84 Kbytes/sec |
+| 3 | 3 | 1.780 seconds | 1000 | 0 | 122000 bytes | 561.94 [#/sec] | 5.339 ms | 66.95 Kbytes/sec |
+| 4 | 4 | 1.360 seconds | 1000 | 0 | 122000 bytes | 735.43 [#/sec] | 5.439 ms | 87.62 Kbytes/sec |
+| 5 | 5 | 1.235 seconds | 1000 | 0 | 122000 bytes | 809.87 [#/sec] | 6.174 ms | 96.49 Kbytes/sec |
 
-### PORT 46000
+### Server_thread_http (PORT 46000)
 
 | No Test | Currency Level | Time taken for test | Complete request | Failed request | Total transferred | Request per second | Time per request | Transfer rate |
 | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: |
-| 1 | 1 | 4.105 seconds | 1000 | 0 | 122000 bytes | 243.60 [#/sec] | 4.105 ms | 29.02 Kbytes/sec |
-| 2 | 2 | 2.760 seconds | 1000 | 0 | 122000 bytes | 362.26 [#/sec] | 5.521 ms | 43.16 Kbytes/sec |
-| 3 | 3 | 2.485 seconds | 1000 | 0 | 122000 bytes | 402.40 [#/sec] | 7.455 ms | 47.94 Kbytes/sec |
-| 4 | 4 | 2.720 seconds | 1000 | 0 | 122000 bytes | 367.58 [#/sec] | 10.882 ms | 43.79 Kbytes/sec |
-| 5 | 5 | 2.089 seconds | 1000 | 0 | 122000 bytes | 478.73 [#/sec] | 10.444 ms | 57.04 Kbytes/sec |
+| 1 | 1 | 744.548 seconds | 1000 | 0 | 122000 bytes | 1.34 [#/sec] | 744.548 ms | 0.16 Kbytes/sec |
+| 2 | 2 | 445.892 seconds | 1000 | 0 | 122000 bytes | 2.24 [#/sec] | 891.783 ms | 0.27 Kbytes/sec |
+| 3 | 3 | 382.434 seconds | 1000 | 0 | 122000 bytes | 2.61 [#/sec] | 1147.301 ms | 0.31 Kbytes/sec |
+| 4 | 4 | 364.884 seconds | 1000 | 0 | 122000 bytes | 2.74 [#/sec] | 364.884 ms | 0.33 Kbytes/sec |
+| 5 | 5 | 379.678 seconds | 1000 | 0 | 122000 bytes | 2.63 [#/sec] | 1898.389 ms | 0.31 Kbytes/sec |
 
